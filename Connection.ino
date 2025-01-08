@@ -7,13 +7,12 @@
 AsyncWebServer server(80);
 
 const char* ssid = "nashef"; 
-const char* password = "fg62QMG4228FBASs";
+const char* password = "";
 
 int ledPin = -1; 
 void handleLED(int productId) {
 
   ledPin = 2;
-   
   if (productId == 1) {
     pinMode(ledPin, OUTPUT);
     for (int i = 0; i < 10; i++) { 
