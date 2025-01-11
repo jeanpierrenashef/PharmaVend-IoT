@@ -13,14 +13,11 @@ const int motor1Pin1 = 26; // Extend pin
 const int motor1Pin2 = 27; // Retract pin
 
 // Motor control pins for Motor 2
-const int motor2Pin1 = 2;  // Forward pin
-const int motor2Pin2 = 4;  // Backward pin
+const int motor2Pin1 = 33;  // Forward pin
+const int motor2Pin2 = 32;  // Backward pin
 
 // HTTP Server
 AsyncWebServer server(80);
-
-volatile int counter = 0; // Counter to track HTTP POST requests
-int lastCounterValue = 0; // Tracks the last processed counter value
 
 void moveMotor1Forward() {
   // Extend Motor 1
@@ -94,14 +91,18 @@ void setup() {
           moveMotor1Forward();
         } else if (productId == 2) {
           moveMotor2Forward();
-        } else {
+        } else if (productId == 58) {
+          digitalWrite(33, HIGH);
+          digitalWrite(32, LOW);
+          digitalWrite(26, HIGH);
+          digitalWrite(27, LOW);
+          delay(2000);
+        }else {
           Serial.println("Invalid product_id received");
           data["error"] = "Invalid product_id";
         }
 
-        counter++; // Increment the counter
         data["message"] = "Motor action executed";
-        data["counter"] = counter;
       } else {
         data["error"] = "Missing product_id";
       }
