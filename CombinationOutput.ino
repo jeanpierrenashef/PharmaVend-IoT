@@ -115,7 +115,7 @@ void moveMotor1Forward() {
     Serial.println("Moving Motor 1 forward...");
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
-    delay(4000); // Move forward for 4 seconds
+    delay(3500); // Move forward for 4 seconds
     Serial.println("Stopping Motor 1...");
     digitalWrite(motor1Pin1, HIGH);
     digitalWrite(motor1Pin2, HIGH);
@@ -125,7 +125,7 @@ void moveMotor2Forward() {
     Serial.println("Moving Motor 2 forward...");
     digitalWrite(motor2Pin1, LOW);
     digitalWrite(motor2Pin2, HIGH);
-    delay(4000); // Move forward for 4 seconds
+    delay(3500); // Move forward for 4 seconds
     Serial.println("Stopping Motor 2...");
     digitalWrite(motor2Pin1, HIGH);
     digitalWrite(motor2Pin2, HIGH);
