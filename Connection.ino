@@ -6,8 +6,8 @@
 
 AsyncWebServer server(80);
 
-const char* ssid = "nashef"; 
-const char* password = "fg62QMG4228FBASs";
+const char* ssid = ""; 
+const char* password = "";
 
 int ledPin = -1; 
 void handleLED(int productId) {
